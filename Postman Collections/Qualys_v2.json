@@ -1,0 +1,863 @@
+{
+  "info": {
+    "name": "Qualys v2",
+    "_postman_id": "cf207c8f-7473-7c22-0bc7-d0b48c4960c8",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "61dbbf56-ea4c-01e5-2150-8b15be2ebbe7",
+      "name": "Asset, add to PC",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/asset/ip/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "add",
+              "type": "text"
+            },
+            {
+              "key": "ips",
+              "value": "1.1.1.1",
+              "type": "text"
+            },
+            {
+              "key": "enable_pc",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "2fb8675c-ce92-e91c-8138-7360479d92f9",
+      "name": "Asset, host list",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/asset/host/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "details",
+              "value": "Basic",
+              "type": "text"
+            },
+            {
+              "key": "show_tags",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "truncation_limit",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "no_vm_scan_since",
+              "value": "1998-01-01",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "2b6060c2-8d35-0af0-1f4d-809b689fd2b8",
+      "name": "Asset, host list detection",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/asset/host/vm/detection/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "output_format",
+              "value": "CSV",
+              "type": "text"
+            },
+            {
+              "key": "ips",
+              "value": "10.10.10.220,10.10.24.78",
+              "type": "text"
+            },
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "status",
+              "value": "Fixed",
+              "type": "text"
+            },
+            {
+              "key": "vm_scan_since",
+              "value": "2013-12-01",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "fda7a84c-4e2d-c5d0-c9cc-948e79b107c2",
+      "name": "Asset, IP list",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/asset/ip/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "compliance_enabled",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "description": "The IP List API v2 (/api/2.0/fo/asset/ip/?action=list) is used to view a list of IP addresses in the user account. By default, all hosts in the user account are included. Optional input parameters support filtering the list by IP addresses and host tracking method. The GET or POST access method may be used to make an API request."
+      }
+    },
+    {
+      "_postman_id": "09a77319-6739-138e-b9bd-de8c6fad5b51",
+      "name": "Excluded hosts list",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": {
+            "username": "mntan2cv",
+            "password": "CJ1007@#627",
+            "saveHelperData": "true",
+            "showPassword": "false"
+          }
+        },
+        "url": "https://{{base_url}}/api/2.0/fo/asset/excluded_ip/?action=list",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bW50YW4yY3Y6Q0oxMDA3QCM2Mjc=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "2ff17a60-dfe1-2135-a9f2-b6ffccae19fc",
+      "name": "Excluded virtual hosts list",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/asset/excluded_ip/history/?action=list",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic cXVheXNfcGIyNzpwYXNzd29yZDE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "c9125554-7a0c-d0ba-d2da-54b60ef34c76",
+      "name": "Knowledge base, list all",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "bddf8362-a412-03fc-1184-3be1a7a9ea9f",
+      "name": "Knowledge base, list from 2013 Q1",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "8486818d-62fb-71a0-989a-2e8b2ccb22e5",
+      "name": "Knowledge base, list QIDs 82054,82024",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/knowledge_base/vuln/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "details",
+              "value": "All",
+              "type": "text"
+            },
+            {
+              "key": "ids",
+              "value": "82054,82024",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "8e6b1881-0f4a-0426-d2ce-294c36ca5a92",
+      "name": "PC, compliance posture",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/compliance/posture/info/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic cXVheXNfcGIyNzpwYXNzd29yZDE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "details",
+              "value": "All",
+              "type": "text"
+            },
+            {
+              "key": "policy_ids",
+              "value": "86492",
+              "type": "text"
+            },
+            {
+              "key": "ips",
+              "value": "10.10.32.87",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "09a3d04b-42b4-2331-5558-904807623430",
+      "name": "PC, fetch scan",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/scan/compliance/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic cXVheXNfcGIyNzpwYXNzd29yZDE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "fetch",
+              "type": "text"
+            },
+            {
+              "key": "scan_ref",
+              "value": "compliance/1386842985.15485",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "c27b63be-cbc4-dac7-1f98-ef2b790ea2d6",
+      "name": "PC, list scans",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/scan/compliance/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic cXVheXNfcGIyNzpwYXNzd29yZDE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "show_ags",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "show_op",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "show_status",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "6bddf1c7-9306-5155-b161-539eacb6c77b",
+      "name": "Scanner Appliance, list",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/appliance/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic cXVheXNfcGIyNzpwYXNzd29yZDE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "output_mode",
+              "value": "full",
+              "type": "text"
+            },
+            {
+              "key": "scan_detail",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "714b5ea3-37b7-c5e1-1592-498d459f8800",
+      "name": "VM, fetch scan",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/scan/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "fetch",
+              "type": "text"
+            },
+            {
+              "key": "scan_ref",
+              "value": "scan/1391836210.38701",
+              "type": "text"
+            },
+            {
+              "key": "mode",
+              "value": "extended",
+              "type": "text"
+            },
+            {
+              "key": "output_format",
+              "value": "json",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "027767f0-3595-da43-dbab-9aa492048a9c",
+      "name": "VM, report, launch",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": {
+            "username": "mntan2cv",
+            "password": "CJ1007@#627",
+            "saveHelperData": "true",
+            "showPassword": "false"
+          }
+        },
+        "url": "https://{{base_url}}/api/2.0/fo/report/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bW50YW4yY3Y6Q0oxMDA3QCM2Mjc=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "launch",
+              "type": "text"
+            },
+            {
+              "key": "template_id",
+              "value": "1448292",
+              "type": "text"
+            },
+            {
+              "key": "report_title",
+              "value": "API wants to munch on certs",
+              "type": "text"
+            },
+            {
+              "key": "output_format",
+              "value": "pdf",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "29acedb3-54c1-997f-230a-83be4e88ad15",
+      "name": "VM, report, status",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": {
+            "username": "mntan2cv",
+            "password": "CJ1007@#627",
+            "saveHelperData": "true",
+            "showPassword": "false"
+          }
+        },
+        "url": "https://{{base_url}}/api/2.0/fo/report/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bW50YW4yY3Y6Q0oxMDA3QCM2Mjc=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "id",
+              "value": "6662512",
+              "type": "text"
+            },
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "822d1787-7000-6442-dee7-7275edc22445",
+      "name": "VM, scan, launch",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/scan/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic cXVheXNfcGIyNzpwYXNzd29yZDE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "launch",
+              "type": "text"
+            },
+            {
+              "key": "asset_groups",
+              "value": "MMW - Training Seattle Data Center",
+              "type": "text"
+            },
+            {
+              "key": "option_title",
+              "value": "PB - Map-like",
+              "type": "text"
+            },
+            {
+              "key": "scan_title",
+              "value": "Acquisition scan of organization_name",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "d870b3ae-1032-cc0c-f1a4-c760434a86ca",
+      "name": "VM, scans, list",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/scan/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            },
+            {
+              "key": "show_ags",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "state",
+              "value": "Finished",
+              "type": "text"
+            },
+            {
+              "key": "scan_ref",
+              "value": "scan/1391836210.38701",
+              "type": "text"
+            },
+            {
+              "key": "show_op",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "show_status",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "ec18e010-33ef-6358-9118-ecbc389dc473",
+      "name": "VM, scanner appliances",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/appliance/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "list",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "ece2a767-568c-1eef-4232-5437acd68d31",
+      "name": "VM, scan, download",
+      "request": {
+        "url": "https://{{base_url}}/api/2.0/fo/scan/",
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "action",
+              "value": "fetch",
+              "type": "text"
+            },
+            {
+              "key": "scan_ref",
+              "value": "scan/1391663710.23487",
+              "type": "text"
+            },
+            {
+              "key": "mode",
+              "value": "extended",
+              "type": "text"
+            }
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "e6748921-05dc-fe52-bc9c-e2d73f9bc5ac",
+      "name": "https://{{base_url}}/Password",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": {
+            "username": "mntan2cv",
+            "password": "CJ1007@#627",
+            "saveHelperData": "true",
+            "showPassword": "false"
+          }
+        },
+        "url": "https://{{base_url}}/Password",
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bW50YW4yY3Y6Q0oxMDA3QCM2Mjc=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "ef259b8a-65fb-3818-5d9a-7428aef53ad6",
+      "name": "https://{{base_url}}/Password",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": {
+            "username": "mntan2cv",
+            "password": "CJ1007@#627",
+            "saveHelperData": "true",
+            "showPassword": "false"
+          }
+        },
+        "url": "https://{{base_url}}/Password",
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "POSTMAN",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bW50YW4yY3Y6Q0oxMDA3QCM2Mjc=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
+    }
+  ]
+}
